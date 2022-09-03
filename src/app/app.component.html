@@ -1,4 +1,37 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<!--hello name="{{ name }}"></hello-->
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><strong>Tabata</strong></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+  </div>
+</nav>
+
+<div class="container text-center" style="font-size: 50px;">
+  <p *ngIf="mudaCor == 1" style="background-color: green; color: white">
+    {{ title }}
+  </p>
+  <p *ngIf="mudaCor == 2" style="background-color: yellow">{{ title }}</p>
+  <p *ngIf="mudaCor == 3" style="background-color: red">{{ title }}</p>
+</div>
+
+<div class="container text-center">
+  <div>
+    <h2>Cycle: {{ cycle }}</h2>
+  </div>
+  <div>
+    <h2 *ngIf="mudaCor == 1">RODANDO</h2>
+    <h2 *ngIf="mudaCor == 2">Descanso: {{ counter }}</h2>
+    <h2 *ngIf="mudaCor == 3">----</h2>
+  </div>
+</div>
